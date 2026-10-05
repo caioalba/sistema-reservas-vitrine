@@ -12,7 +12,10 @@ Sistema web de agendamento de reservas de carros e salas de reunião para uso co
 ## Contexto
 Projeto criado a partir de uma necessidade real do dia a dia do suporte de TI, desenvolvido com apoio de ferramentas de IA (Codex, Gemini, Antigravity) e validado em uso real.
 
-## Tecnologias
-Ver detalhes na versão privada. [REVISAR: confirmar stack para listar aqui]
+## Captura de tela
+
+![Agenda semanal](agenda-semana.png)
+
+*Visão semanal da agenda por recurso: carro e salas de reunião.*
 
 Autor: [Caio Alba de Camargo](https://github.com/caioalba)
