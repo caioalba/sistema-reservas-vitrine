@@ -8,11 +8,57 @@ O projeto foi concebido a partir de necessidades operacionais reais de suporte i
 
 ---
 
-## Captura de tela
+<p align="center"><img src="docs/screenshots/capa.jpg" alt="Agenda no computador e no celular"></p>
+
+> As capturas e o manual usam a marca fictícia **Vértice** e dados de exemplo (pessoas, reservas e telefones inventados). O sistema real roda com a identidade da empresa onde foi implantado.
+
+## Novidades da versão 6 (outubro/2026)
+
+- **Agenda V6:** visão semanal e diária com linhas por recurso, chips de unidade (Sede, Centro ou Todas) e de recurso, Ajustar e Ampliar a linha do tempo.
+- **Celular redesenhado:** chips de dia, resumo "minhas reservas" e "agora", lista do dia, botão flutuante de nova reserva e barra inferior (Agenda, Minhas, Menu).
+- **Linha do tempo no celular:** botão **Girar** (vertical ou horizontal), **Ampliar/Ajustar** e toque no nome do recurso para focar só nele; a preferência fica salva no aparelho.
+- **Nova tela de entrada:** no computador, formulário ao lado de um painel com fotos de carro e sala; no celular, topo colorido, fotos e rodapé com suporte.
+- **E-mails no mesmo visual da agenda:** cartão da reserva com unidade, data por extenso, horário, duração e status; boas-vindas com credenciais, primeiro acesso em 3 passos e instalação no Android e no iPhone.
+- **Permissão por recurso:** além da unidade, cada perfil ou colaborador pode ser liberado para recursos específicos (ex.: só as salas).
+- **Manual com vídeos:** página que explica sozinha cada tarefa, com um vídeo curto para cada uma e um vídeo completo.
+- **Tema claro e escuro** em todas as telas.
+
+## Telas
+
+### Entrada
+
+| Computador | Celular |
+|---|---|
+| <img src="docs/screenshots/desktop-entrada.jpg" width="560" alt="Entrada no computador"> | <img src="docs/screenshots/celular-entrada.jpg" width="230" alt="Entrada no celular"> |
+| <img src="docs/screenshots/desktop-entrada-escuro.jpg" width="560" alt="Entrada no tema escuro"> | <img src="docs/screenshots/celular-entrada-escuro.jpg" width="230" alt="Entrada no celular, tema escuro"> |
+
+### Agenda da semana
 
 ![Agenda semanal](agenda-semana.png)
 
-*Visão semanal da agenda por recurso: carro e salas de reunião.*
+*Visão semanal da agenda por recurso: carro e salas de reunião de duas unidades.*
+
+<img src="docs/screenshots/desktop-agenda-escuro.jpg" alt="Agenda semanal no tema escuro">
+
+### No celular
+
+| Agenda | Nova reserva | Minhas reservas | Tema escuro |
+|---|---|---|---|
+| <img src="docs/screenshots/celular-agenda.jpg" width="190" alt="Agenda no celular"> | <img src="docs/screenshots/celular-nova-reserva.jpg" width="190" alt="Nova reserva"> | <img src="docs/screenshots/celular-minhas-reservas.jpg" width="190" alt="Minhas reservas"> | <img src="docs/screenshots/celular-agenda-escuro.jpg" width="190" alt="Agenda no tema escuro"> |
+
+### Minhas reservas, painel e administração
+
+<img src="docs/screenshots/desktop-minhas-reservas.jpg" alt="Minhas reservas no computador">
+<img src="docs/screenshots/desktop-painel.jpg" alt="Painel de indicadores">
+<img src="docs/screenshots/desktop-admin-usuarios.jpg" alt="Administração de usuários">
+
+### Manual com vídeos
+
+A pasta [`manual/`](manual/) traz o guia do usuário: passo a passo de cada tarefa (primeiro acesso, reservar carro e sala, ver detalhes, editar, cancelar, minhas reservas, instalar no Android e no iPhone), um vídeo curto para cada uma e um vídeo completo. Os vídeos foram gravados de forma automatizada (Playwright e ffmpeg) num celular emulado, com dedo, destaque e legendas. Para ver a página, baixe a pasta e abra `manual/index.html`, ou ative o GitHub Pages neste repositório.
+
+| Reservar o carro | Linha do tempo | Instalar no iPhone |
+|---|---|---|
+| <img src="docs/screenshots/video-reservar-carro.jpg" width="220" alt="Vídeo: reservar o carro"> | <img src="docs/screenshots/video-agenda.jpg" width="220" alt="Vídeo: agenda"> | <img src="docs/screenshots/video-instalar-iphone.jpg" width="220" alt="Vídeo: instalar no iPhone"> |
 
 ---
 
@@ -126,6 +172,15 @@ O sistema dispõe de um módulo transacional completo de notificações para man
 ### Suporte a PWA e Notificador de Desktop
 - **Progressive Web App (PWA):** Manifesto web e Service Worker configurados para permitir a instalação da aplicação na tela de início de smartphones e tablets, proporcionando experiência similar a um aplicativo nativo em dispositivos móveis.
 - **Notificador de Desktop para Windows:** Módulo complementar executável em segundo plano na bandeja do sistema operacional (Systray), realizando consultas periódicas para apresentar alertas persistentes na área de trabalho quando novas reservas, cancelamentos ou lembretes forem emitidos para o usuário autenticado.
+
+---
+
+## Tecnologia
+
+- PHP 8 sem framework e MySQL/MariaDB, com transações para impedir conflito de horário.
+- HTML, CSS e JavaScript puros (sem etapa de build), fonte Montserrat hospedada no próprio projeto e ícones Lucide.
+- PWA (manifesto e Service Worker) para instalar no celular.
+- Testes automatizados em PHP rodando em Docker; manual e vídeos gerados com Playwright e ffmpeg.
 
 ---
 
